@@ -15,7 +15,7 @@ bash download.sh IDtable.txt Test Ref
 ```
 ## 流程
 ### 1.预处理：从 NCBI 上下载得到 IDtable 文件
-- 进入NCBI Assembly 网站 (https://www.ncbi.nlm.nih.gov/assembly/)，搜索需要批量下载的物种名称 (e.g. Escherichia coli，Viruses)
+- 进入NCBI Assembly 网站 (https://www.ncbi.nlm.nih.gov/assembly/) 搜索需要批量下载的物种名称 (e.g. Escherichia coli，Viruses)
 ![](README_SCREENSHOTS/screenshot_1.jpeg)
 
 - 选择左侧 **Status** 以及 **Assembly level** 选中数据范围
@@ -38,7 +38,7 @@ GCA_000280655.1	|401628	|GCF_000280655.1	|621018
 ```bash
 bash download.sh IDtable.txt Test Ref
 ```
-该脚本以**IDtable.txt**中的**Assembly ID**为输入对象(GCA_000500165.1)，采用 rsync 工具批量下载 NCBI FTP(https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/500/165/GCA_000500165.1_MAB_082312_2258/)上对应的氨基酸序列(_genomic.fna.gz)以及基因组注释文件(_genomic.gbff.gz)
+该脚本以**IDtable.txt**中的**Assembly ID**为输入对象(GCA_000500165.1)，采用 rsync 工具批量下载 NCBI FTP(https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/500/165/GCA_000500165.1_MAB_082312_2258/) 上对应的氨基酸序列(_genomic.fna.gz)以及基因组注释文件(_genomic.gbff.gz)
 ![](README_SCREENSHOTS/screenshot_5.jpeg)
 
 
