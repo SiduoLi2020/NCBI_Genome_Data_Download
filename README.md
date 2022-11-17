@@ -16,7 +16,7 @@ bash download.sh IDtable.txt Test Ref
 ## 流程
 ### 1.预处理：从 NCBI 上下载得到 IDtable 文件
 - 进入NCBI Assembly 网站 (https://www.ncbi.nlm.nih.gov/assembly/)，搜索需要批量下载的物种名称 (e.g. Escherichia coli，Viruses)
-![screenshot_1](README_SCREENSHOTS\screenshot_1.jpeg)
+![](README_SCREENSHOTS/screenshot_1.jpeg)
 
 - 选择左侧 **Status** 以及 **Assembly level** 选中数据范围
 ![](README_SCREENSHOTS/screenshot_2.jpeg)
