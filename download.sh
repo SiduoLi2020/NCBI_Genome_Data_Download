@@ -27,12 +27,29 @@ if [ ! -n "$3" ]; then
 fi
 
 
-python3 NCBIGenomeDownload.py -i $1 -n $2 -t $3
+if [[ -f "$2_$3_Context.txt" ]]; then
+    echo $2_$3_Context.txt exists!
+    sleep 1s
+else
+    python3 NCBIGenomeDownload.py -i $1 -n $2 -t $3
+    
+    sleep 1s
+    echo download data from NCBI
+    sleep 1s
+fi
 
-sleep 1s
-echo download data from NCBI
+start_time=$(date +%s)
 
-while read line
-do 
-    rsync --copy-links --recursive --times --verbose $line $2_$3/
-done < $2_$3_Context.txt
+if [[ ! -d $2_$3 ]];then
+    mkdir $2_$3/
+fi
+
+while read line; do {
+     rsync --copy-links --recursive --times --verbose $line $2_$3/ > rsync_$2_$3_log.txt
+} & done < $2_$3_Context.txt 
+
+wait
+
+end_time=$(date +%s)
+cost_time=$[ $end_time-$start_time ]
+echo cost $(($cost_time/60))min $(($cost_time%60))s
